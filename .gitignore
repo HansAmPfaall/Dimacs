@@ -1,0 +1,16 @@
+.vscodeignore
+*.aux
+*.log
+*.out
+*.toc
+*.gz
+*.fls
+llncsdoc.pdf
+*.fdb_latexmk
+fig1*
+__pycache__
+history.txt
+readme.txt
+checklist
+settings.json
+*.blg

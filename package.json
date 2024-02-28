@@ -1,0 +1,149 @@
+{
+  "name": "dimacs",
+  "displayName": "DIMACS",
+  "description": "A Visual Studio Code extension for syntax highlighting DIMACS format files.",
+  "version": "0.0.1",
+  "icon": "icon/logo.jpeg",
+  "license": "MIT",
+  "keywords": [
+    "dimacs",
+    "visual studio code",
+    "extension",
+    "syntax highlighting",
+    "cnf",
+    "wcnf",
+    "formatting"
+  ],
+  "publisher": "HansAmPfaall",
+  "engines": {
+    "vscode": "^1.45.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/freiburg-missing-semester-course/project-HansAmPfaall"
+  },
+  "categories": [],
+  "activationEvents": [
+    "onLanguage:dimacs_cnf",
+    "onLanguage:dimacs_wcnf"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "languages": [
+      {
+        "id": "dimacs_cnf",
+        "aliases": [
+          "Dimacs CNF"
+        ],
+        "extensions": [
+          ".cnf"
+        ],
+        "configuration": "./language-configuration.json",
+        "icon": {
+          "light": "icon/cnf.jpeg",
+          "dark": "icon/cnf.jpeg"
+        }
+      },
+      {
+        "id": "dimacs_wcnf",
+        "aliases": [
+          "Dimacs WCNF"
+        ],
+        "extensions": [
+          ".wcnf"
+        ],
+        "configuration": "./language-configuration.json",
+        "icon": {
+          "light": "icon/wcnf.jpeg",
+          "dark": "icon/wcnf.jpeg"
+        }
+      }
+    ],
+    "grammars": [
+      {
+        "language": "dimacs_cnf",
+        "scopeName": "source.dimacs.cnf",
+        "path": "./syntax/cnf.tmGrammar.json",
+        "extensions": [
+          ".cnf"
+        ]
+      },
+      {
+        "language": "dimacs_wcnf",
+        "scopeName": "source.dimacs.wcnf",
+        "path": "./syntax/wcnf.tmGrammar.json",
+        "extensions": [
+          ".wcnf"
+        ]
+      }
+    ],
+    "configurationDefaults": {
+      "editor.tokenColorCustomizations": {
+        "textMateRules": [
+          {
+            "scope": "source.dimacs literal",
+            "settings": {
+              "foreground": "#EC008C",
+              "fontStyle": ""
+            }
+          },
+          {
+            "scope": "source.dimacs weight",
+            "settings": {
+              "foreground": "#EC9B00",
+              "fontStyle": ""
+            }
+          },
+          {
+            "scope": "source.dimacs zero",
+            "settings": {
+              "foreground": "#0078EC",
+              "fontStyle": ""
+            }
+          },
+          {
+            "scope": "source.dimacs header",
+            "settings": {
+              "foreground": "#00DFEC",
+              "fontStyle": ""
+            }
+          },
+          {
+            "scope": "source.dimacs comment",
+            "settings": {
+              "foreground": "#008000",
+              "fontStyle": ""
+            }
+          },
+          {
+            "scope": "source.dimacs minus",
+            "settings": {
+              "foreground": "#FF0000",
+              "fontStyle": ""
+            }
+          }
+        ]
+      }
+    },
+    "configuration": {
+      "title": "Dimacs",
+      "properties": {
+        "dimacs.enableAutoFormat": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enables or disables auto format"
+        },
+        "yourExtension.featureYOption": {
+          "type": "string",
+          "default": "option1",
+          "description": "Choose an option for feature Y",
+          "enum": [
+            "option1",
+            "option2",
+            "option3"
+          ]
+        }
+      }
+    }
+  }
+}

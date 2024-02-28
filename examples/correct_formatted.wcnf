@@ -1,0 +1,14 @@
+c In this file multiple things are wrong.
+c In the last line is a empty clause.
+c In one line is a non-integer value.
+c We have negative weights.
+c and we have many trailing whitespaces.
+h 1 2 0
+h 3 0
+h 4 0
+h 5 0
+1 -2 3 0
+1 -2 3 4 0
+1 2 0
+1 2 -3 0
+1 0
